@@ -63,7 +63,7 @@ exports.destroy = function(req, res) {
     }
     thing.remove(function(err) {
       if(err) { return handleError(res, err); }
-      return res.send(204);
+      return res.sendStatus(204);
     });
   });
 };
@@ -76,7 +76,7 @@ exports.star = function(req, res) {
   });
 };
 exports.unstar = function(req, res) {
-  Thing.update({_id: req.params.id}, {$pull: {stars: req.user}}, function(err, num){
+  Thing.update({_id: req.params.id}, {$pull: {stars: req.user._id}}, function(err, num){
     if (err) { return handleError(res, err); }
     if(num === 0) { return res.send(404); }
     exports.show(req, res);
@@ -85,5 +85,5 @@ exports.unstar = function(req, res) {
 
 
 function handleError(res, err) {
-  return res.send(500, err);
+  return res.status(500).send(err);
 }
