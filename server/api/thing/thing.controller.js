@@ -17,7 +17,7 @@ exports.index = function(req, res) {
   var query = req.query.query && JSON.parse(req.query.query);
   Thing.find(query).sort({_id: -1}).limit(20).populate('user', 'name').exec(function (err, things) {
     if(err) { return handleError(res, err); }
-    return res.json(200, things);
+    return res.status(200).json(things);
   });
 };
 
@@ -35,7 +35,7 @@ exports.create = function(req, res) {
   req.body.user = req.user;
   Thing.create(req.body, function(err, thing) {
     if(err) { return handleError(res, err); }
-    return res.json(201, thing);
+    return res.status(201).json(thing);
   });
 };
 
@@ -48,7 +48,7 @@ exports.update = function(req, res) {
     var updated = _.merge(thing, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
-      return res.json(200, thing);
+      return res.json(thing);
     });
   });
 };
