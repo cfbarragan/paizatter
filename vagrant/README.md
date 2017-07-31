@@ -4,7 +4,7 @@
 
 2- Download Vagrant 1.9.6 https://www.vagrantup.com/downloads.html
 
-3- Enter to folder which contains "Vagrantfile" file
+3- Enter to the folder which contains "Vagrantfile" file
 
 4- Run: vagrant up
 
