@@ -12,9 +12,4 @@ Source code: https://github.com/gi-no/paizatter
 grunt serve
 ```
 
-## Deployment
-
-```
-yo angular-fullstack:heroku
-```
 
