@@ -1,23 +1,17 @@
-# Front end setup
+# Setup
 
 1- Download virtual box https://www.virtualbox.org/wiki/Downloads
 
 2- Download Vagrant 1.9.6 https://www.vagrantup.com/downloads.html
 
-3- Clone enviroment repo
+4- cd vagrantNodeJs
 
-4- Run: vagrant up
+5- vagrant up
 
-5- Enter vm: ssh vagrant@192.168.50.15
+6- Enter vm: ssh vagrant@192.168.50.20
 
-6- Create new ssh keys(https://hxgitlab.hexacta.com/help/ssh/README)
+7- Run: cd courseNodeJsShared/
 
-7- Run: cd sntShared/
+8- Run: git clone https://github.com/hexacta/paizatter.git
 
-8- Run: git clone git@hxgitlab.hexacta.com:SistemaNacionalDeTurnos/front-end.git
-
-9- Run: cd front-end/
-
-10- Run: yarn install
-
-11- Outside vm install your favorite text editor/ide and open folder \\192.168.50.15\sntShared\front-end
+9- Outside vm install open your favorite text editor/ide in folder \\192.168.50.20\courseNodeJsShared\paizatter
