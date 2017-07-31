@@ -23,14 +23,10 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 
-
 ## Setup
 yarn install
 yarn run bower
 yarn run build
 
-
 ## Run locally
-
 yarn run start
-
