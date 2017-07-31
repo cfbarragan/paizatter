@@ -10,8 +10,8 @@
 
 5- Enter vm: ssh vagrant@192.168.50.20
 
-6- Run: cd courseNodeJsShared/
+6- Run: cd sntShared/
 
 7- Run: git clone https://github.com/hexacta/paizatter.git
 
-8- Outside vm install open your favorite text editor/ide in folder \\192.168.50.20\courseNodeJsShared\paizatter
+8- Outside vm install open your favorite text editor/ide in folder \\192.168.50.20\sntShared\paizatter
