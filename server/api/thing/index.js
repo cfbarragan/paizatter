@@ -14,4 +14,6 @@ router.delete('/:id', auth.isAuthenticated(), controller.destroy);
 router.put('/:id/star', auth.isAuthenticated(), controller.star);
 router.delete('/:id/star', auth.isAuthenticated(), controller.unstar);
 
+//TODO: Implementar endpoint para dislike feature
+
 module.exports = router;
