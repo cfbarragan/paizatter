@@ -24,9 +24,9 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 
 ## Setup
-yarn install
-yarn run bower
-yarn run build
+* yarn install
+* yarn run bower
+* yarn run build
 
 ## Run locally
 yarn run start
