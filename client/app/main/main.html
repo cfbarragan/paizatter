@@ -34,6 +34,12 @@
           <button ng-if="!isMyStar(thing)" type="button" class="close" ng-click="starThing(thing)"  >
             <span class="glyphicon glyphicon-star-empty"></span>
           </button>
+          <button ng-if="isNotLikeDisabled(thing)" type="button" class="close" ng-click="notLike(thing)"  >
+            <span class="glyphicon glyphicon-thumbs-down" style="color:black"></span>
+          </button>
+          <button ng-if="!isNotLikeDisabled(thing)" type="button" class="close" ng-click="undoNotLike(thing)"  >
+            <span class="glyphicon glyphicon-thumbs-down" style="color:red"></span>
+          </button>          	
           <h2 class="message">{{thing.name}}</h2>
           <span style="float: right;">({{thing.createdAt|fromNow}})</span>
         </div>

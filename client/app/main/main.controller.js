@@ -61,6 +61,19 @@ angular.module('paizatterApp')
         $scope.awesomeThings[$scope.awesomeThings.indexOf(thing)] = newthing;
       });
     };
+
+    $scope.notLike = function(thing) {
+      $http.put('/api/things/' + thing._id + '/dislike').success(function(newthing){
+        $scope.awesomeThings[$scope.awesomeThings.indexOf(thing)] = newthing;
+      });
+    };
+
+    $scope.undoNotLike = function(thing) {
+      $http.delete('/api/things/' + thing._id + '/dislike').success(function(newthing){
+        $scope.awesomeThings[$scope.awesomeThings.indexOf(thing)] = newthing;
+      });
+    };
+
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
@@ -70,6 +83,10 @@ angular.module('paizatterApp')
     };
     $scope.isMyStar = function(thing){
       return Auth.isLoggedIn() && thing.stars && thing.stars.indexOf(Auth.getCurrentUser()._id)!==-1;
+    };
+
+    $scope.isNotLikeDisabled = function(thing){
+      return Auth.isLoggedIn() && thing.dislikes && thing.dislikes.indexOf(Auth.getCurrentUser()._id) ==-1;
     };
 
   });
