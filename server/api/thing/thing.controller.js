@@ -29,6 +29,7 @@ exports.show = function(req, res) {
 
 // Creates a new thing in the DB.
 exports.create = function(req, res) {
+  //TODO: ReImplementar usando promise
   req.body.user = req.user;
   Thing.create(req.body, function(err, thing) {
     if(err) { return handleError(res, err); }
