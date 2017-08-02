@@ -14,11 +14,8 @@ var Thing = require('./thing.model');
 
 // Get list of things
 exports.index = function(req, res) {
-  var query = req.query.query && JSON.parse(req.query.query);
-  Thing.find(query).sort({_id: -1}).limit(20).populate('user', 'name').exec(function (err, things) {
-    if(err) { return handleError(res, err); }
-    return res.status(200).json(things);
-  });
+  //TODO: Implementar endpoint para GET api/things
+  return res.status(200).json([]);
 };
 
 // Get a single thing
@@ -82,7 +79,6 @@ exports.unstar = function(req, res) {
     exports.show(req, res);
   });
 };
-
 
 function handleError(res, err) {
   return res.status(500).send(err);
